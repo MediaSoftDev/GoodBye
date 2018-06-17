@@ -1,0 +1,6 @@
+# Site Build
+
+name: Daniel Alejo Alavarez
+markdown: redcarpet
+exclude: ["node_modules", "gulpfile.js", "package.json"]
+

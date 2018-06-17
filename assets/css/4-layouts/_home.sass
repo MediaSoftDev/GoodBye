@@ -1,0 +1,147 @@
+.home-wrap
+	display: flex
+	min-height: 100vh
+
+	@media (max-width: 775px)
+		display: block
+		overflow: hidden
+
+.home-sections
+	flex: 1
+
+	section
+		padding: 50px 0
+
+
+	//Flex Classes
+	.flex
+		display: flex
+		//flex-directions: rows
+	.flex--center
+		justify-content: center
+	.flex--space-around
+		justify-content: space-around
+
+	.order-first
+		order: -1
+
+
+//columns
+.col-1
+	max-width: 320px
+	padding: 0 10px
+	background: pink
+	box-sizing: border-box
+
+.push-right
+	margin-right: 330px
+
+.col-2
+	max-width: 640px
+	padding: 0 10px
+	background: #ea0a0a
+	box-sizing: border-box
+	width: 100%
+
+.col-50
+	width: 50%
+	background: yellow
+
+
+
+@media (max-width: 640px)
+	.home-sections .flex
+		display: block
+
+	.col-1
+		width: 100%
+
+	.col-50
+		width: auto
+
+	.push-right
+		margin-left: 0
+
+
+.home-lead
+	color: #F6F6F8
+	font-size: 36px
+	line-height: 1.1
+
+	&.outdented
+		text-indent: -0.75em
+
+@media (max-width: 640px)
+	.home-lead
+		text-align: center
+
+	&.outdented
+		text-indent: 0
+
+h3
+	@extend %small-bold
+	color: $accent-light
+	text-align: center
+	padding: 100px 0 30px
+	@media (max-width: 640px)
+	 	padding: 50px 0 50px
+
+
+.btnScrollTop
+
+	background: #F8D902
+
+	width: 50px
+	height: 50px
+
+	border-radius: 50%
+	//border: 1px solid rgba(250,250,250,.7)
+	font-weight: 300
+	font-size: verdana
+	font-size: 50px
+	color: white!important
+	text-align: center
+	box-shadow: 0px 4px 40px rgba(0,0,0,.7)
+	position: fixed
+	bottom: 50px
+	right: 25px
+	z-index: 9999
+	//display: none
+	opacity: .8
+	&:hover
+		opacity: 1
+
+	animation-name: myBtnScrollTop
+	animation-duration: 5s
+	animation-timing-function: ease-in-out
+	animation-delay: 0s
+	-webkit-animation-iteration-count: 1
+	//animation-iteration-count: infinite
+	animation-fill-mode: forwards
+	//animation-play-state: running
+	transform-origin: center bottom
+
+
+
+	@keyframes myBtnScrollTop
+		0%
+			opacity: 0
+		from, 20%, 53%, 80%, to
+		    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000)
+		    transform: translate3d(0,0,0)
+
+
+		40%, 43%
+			animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060)
+			transform: translate3d(0, -30px, 0)
+
+
+		70%
+			animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060)
+			transform: translate3d(0, -15px, 0)
+
+
+		90%
+			transform: translate3d(0,-4px,0)
+		100%
+			opacity: 1
